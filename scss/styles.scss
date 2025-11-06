@@ -31,6 +31,9 @@ section {
     color: white;
     font-size: 1.5rem;
     z-index: 99;
+    @include xs{
+      display: none;
+    }
     img {
       padding: 30px;
       width: 100%;
@@ -84,6 +87,9 @@ section {
   main {
     width: calc(100% - 290px);
     color: white;
+    @include xs{
+      width: 100%;
+    }
     .home {
       min-height: 100vh;
 
