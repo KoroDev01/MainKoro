@@ -1,16 +1,23 @@
 {
-  "name": "korodevsite",
-  "version": "1.0.0",
-  "main": "index.js",
+  "name": "vite-project",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "sass": "sass -w scss:css"
+    "sass": "sass -w scss:css",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "KoroDev site",
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwind": "^2.3.1",
+    "tailwindcss": "^4.1.14",
+    "vite": "^7.1.7"
+  },
   "dependencies": {
-    "bash": "^0.0.1",
-    "sass": "^1.77.6"
+    "@tailwindcss/postcss": "^4.1.14",
+    "@tailwindcss/vite": "^4.1.14"
   }
 }

@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
+    <!-- AJOUTEZ CES BALISES DANS index.html -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="css/variables.css" />
-    <!-- font awesome -->
-    <script
-      src="https://kit.fontawesome.com/6d0866b8ac.js"
-      crossorigin="anonymous"
-    ></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <meta
+      name="description"
+      content="Ceci est est une page représentant mon portfolio"
+    />
+    <meta name="author" content="KoroDev" />
+    <meta
+      name="keywords"
+      content="Portfolio, KoroDev, Développeur, Web, Projets, Compétences, Contact, HTML, CSS, JavaScript, React, Node.js, GitHub,CV,cv"
+    />
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -29,158 +36,98 @@
       rel="stylesheet"
       href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
     />
-    <title>KoroDev</title>
+    <script
+      src="https://kit.fontawesome.com/6d0866b8ac.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title class="">KoroDev Portfolio</title>
   </head>
   <body>
-    <div class="container">
-      <header class="header">
-        <div class="logo">
-          <a href="index.html"><img src="img/koro.png" alt="logo" /></a>
-        </div>
-        <section class="sections">
+    <section class="flex">
+      <header >
+        <img  src="/img/pp.jpg" alt="" width="100px" />
+
+        <nav>
           <ul>
-            <li>
-              <a href="#home"><i class="fa-solid fa-house"></i>Home</a>
+            <li class="">
+              <a href="#home"> <i class="fa-solid fa-house"></i>Home</a>
             </li>
-            <div class="sep"></div>
             <li>
               <a href="#features"
-                ><i class="fa-solid fa-briefcase"></i>Featuress</a
+                ><i class="fa-solid fa-briefcase"></i>Features</a
               >
             </li>
-            <div class="sep"></div>
             <li>
-              <a href="#skills"
-                ><i class="fa-solid fa-bars-progress"></i>Skills</a
-              >
+              <a href="#skills"><i class="fa-solid fa-cogs"></i>Skills</a>
             </li>
-            <div class="sep"></div>
             <li>
               <a href="#projects"
-                ><i class="fa-solid fa-layer-group"></i>Projects</a
+                ><i class="fa-solid fa-folder-open"></i>Projects</a
               >
             </li>
-            <div class="sep"></div>
             <li>
-              <a href="#contact"
-                ><i class="fa-solid fa-layer-group"></i>Contact</a
+              <a href="#contacts"
+                ><i class="fa-solid fa-envelope"></i>Contacts</a
               >
             </li>
           </ul>
-        </section>
-        <section class="social">
-          <h2>Find me on</h2>
-          <div class="social-container">
-            <a href="https://www.tiktok.com/@koro_pubgm1"
-              ><i class="fa-brands fa-tiktok"></i
-            ></a>
-            <a href="https://www.instagram.com/__bankaiiii__/"
-              ><i class="fa-brands fa-instagram"></i
-            ></a>
-            <a href="https://discord.gg/HwpxHyXvqh"
-              ><i class="fa-brands fa-discord"></i
-            ></a>
+          <p>Find me on</p>
+          <div class="social">
+            <a href=""><i class="fa-brands fa-tiktok"></i></a>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+            <a href=""><i class="fa-brands fa-discord"></i></a>
           </div>
-        </section>
+        </nav>
       </header>
-      <main class="mainn">
-        <section id="home" class="home">
-          <div class="bx bx-menu" id="menu-icon"></div>
+
+      <main>
+        <section class="home" id="home">
           <div class="FlyingPointsCanvas">
             <h2>Koro dev</h2>
-            <p>I will be <span id="text-container"></span></p>
+            <p>I will be <span id="textContainer"></span></p>
           </div>
         </section>
-        <section class="features">
-          <h2 id="features" class="little-titles">FEATURES</h2>
-          <h3 class="big-titles">What I Do</h3>
-          <div class="features-content">
-            <div class="item">
-              <i class="fa-solid fa-desktop"></i>
-              <h2>WEBSITE CODER</h2>
-            </div>
-            <div class="item">
-              <i class="fa-solid fa-desktop"></i>
-              <h2>RESPONSIVE WEBSITES</h2>
-            </div>
-            <div class="item">
-              <i class="fa-solid fa-desktop"></i>
-              <h2>FRONT END DEVELOPPER</h2>
-            </div>
-          </div>
+
+        <section class="titles-animation "  id="features">
+          <h2 class=" mt-5 ">Features</h2>
+          <h3 class="m-[2rem]">What can i do?</h3>
+
+          <div class="featuresContainer"></div>
         </section>
-        <section id="skills" class="skills">
-          <h2 class="little-titles">Skills</h2>
-          <div class="skills-nav">
-            <nav>
-              <h2><a href="#">Professional skills</a></h2>
-            </nav>
+
+        <section class="titles-animation"   id="skills">
+          <h2 class="text-center titles-animation">Compétences</h2>
+          <div class="mt-10" id="skills-titles">
+            <p>Professional skills</p>
           </div>
-          <div class="bars">
-            <div class="html">
-              <h3>HTML</h3>
-              <div class="bar-skill">
-                <div class="bar-skill-progress"></div>
-                <div class="bar-skill-dot"></div>
-                <div class="bar-skill-percentage">100%</div>
-              </div>
-            </div>
-            <div class="scss">
-              <h3>SCSS</h3>
-              <div class="bar-skill">
-                <div class="bar-skill-progress"></div>
-                <div class="bar-skill-dot"></div>
-                <div class="bar-skill-percentage">90%</div>
-              </div>
-            </div>
-            <div class="js">
-              <h3>JAVA SCRIPT</h3>
-              <div class="bar-skill">
-                <div class="bar-skill-progress"></div>
-                <div class="bar-skill-dot"></div>
-                <div class="bar-skill-percentage">15%</div>
-              </div>
+          <div id="bars" class="bars"></div>
+        </section>
+
+        <section class="text-center titles-animation " id="projects">
+          <h2 class="mt-5 titles-animation">Projets</h2>
+          <p class="mt-5">Explorez mes projets récents.</p>
+          <div class="mt-5" id="projects-content">
+            
+              
             </div>
           </div>
         </section>
-        <section id="projects" class="projects">
-          <h2 class="little-titles">PROJECTS</h2>
-          <h3 class="big-titles">My Projects</h3>
-          <div class="projects-content">
-            <div class="site">
-              <div class="site1">
-                <img src="img/site11.png" alt="" />
-                <h2>Le journal du lundi</h2>
-                <button>
-                  <a href="sites/journal/index.html">Go to see</a>
-                </button>
-              </div>
-              <div class="site1">
-                <img src="img/site2.png" alt="" />
-                <h2>Mon CV</h2>
-                <button><a href="sites/cv/index.html">Go to see</a></button>
-              </div>
-              <div class="site1">
-                <img src="img/site31.png" alt="" />
-                <h2>Agence Ledor</h2>
-                <button><a href="sites/ledor/index.html">Go to see</a></button>
-              </div>
-              <div class="site1">
-                <img src="img/s41.png" alt="" />
-                <h2>CAFE FLORETTE</h2>
-                <button>
-                  <a href="sites/florette/index.html">Go to see</a>
-                </button>
-              </div>
-            </div>
-          </div>
-        </section>
+        
+        <footer>
+            <p class="pt-5">© 2024. All rights reserved by KoroDev</p>
+            <p class="pb-5">Email: MALIFAIZ03@gmail.com</p>
+          </footer>
       </main>
-    </div>
-    <footer id="contact" class="footer">
-      <h2 class="ft">© 2024. All rights reserved by KoroDev</h2>
-      <h3 class="ft">Email: MALIFAIZ03@gmail.com</h3>
-    </footer>
-    <script src="script.js"></script>
+      
+    </section>
   </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"
+  ></script>
+  
+  <script src="/js/script.js"></script>
 </html>
+
