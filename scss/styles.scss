@@ -159,7 +159,7 @@ section {
     align-items: center;
 
     h2 {
-      color: var(--primary-color);
+      color: white;
     }
     .featuresContainer {
       display: flex;
@@ -201,14 +201,16 @@ section {
   #skills {
     border-top: white 1px solid;
     background-color: var(--gris);
-    color: var(--primary-color);
+    color: white;
     display: flex;
     flex-direction: column;
-    padding: 100px;
+    padding: 20px;
+    align-items: center;
     
     h2 {
       margin-top: 10px;
       font-size: 20px;
+      
     }
     #skills-titles {
       display: flex;
@@ -308,10 +310,10 @@ section {
   #projects {
     border-top: white 1px solid;
     background-color: var(--gris);
-
+    
     flex-direction: column;
     h2 {
-      color: var(--primary-color);
+      color: white;
       font-size: 20px;
     }
     p {

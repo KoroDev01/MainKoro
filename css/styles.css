@@ -247,7 +247,7 @@ section #features {
   align-items: center;
 }
 section #features h2 {
-  color: var(--primary-color);
+  color: white;
 }
 section #features .featuresContainer {
   display: flex;
@@ -288,10 +288,11 @@ section #features h3 {
 section #skills {
   border-top: white 1px solid;
   background-color: var(--gris);
-  color: var(--primary-color);
+  color: white;
   display: flex;
   flex-direction: column;
-  padding: 100px;
+  padding: 20px;
+  align-items: center;
 }
 section #skills h2 {
   margin-top: 10px;
@@ -391,7 +392,7 @@ section #projects {
   flex-direction: column;
 }
 section #projects h2 {
-  color: var(--primary-color);
+  color: white;
   font-size: 20px;
 }
 section #projects p {
