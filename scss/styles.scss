@@ -100,6 +100,7 @@ section {
         width: calc(100% - 290px);
         @include xs{
       width: 100vw;
+      
     }
       }
     }
@@ -128,16 +129,21 @@ section {
         text-align: center;
         @include xs {
         text-align: center;
-        
+        font-size: 25px;
       }
         span {
           color: var(--secondary-color);
+
         }
         #textContainer {
           font-family: monospace;
           font-size: 40px;
           color: #01b7ff;
           border-right: 2px solid #f5f5f5;
+                    @include xs {
+        
+        font-size: 30px;
+      }
         }
       }
     }
@@ -352,7 +358,7 @@ section {
             border-radius: 10px;
             margin-bottom: 1rem;
             @include xs{
-              
+
             }
           }
           button {

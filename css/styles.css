@@ -221,6 +221,7 @@ section main #home p {
 @media (max-width: 580px) {
   section main #home p {
     text-align: center;
+    font-size: 25px;
   }
 }
 section main #home p span {
@@ -231,6 +232,11 @@ section main #home p #textContainer {
   font-size: 40px;
   color: #01b7ff;
   border-right: 2px solid #f5f5f5;
+}
+@media (max-width: 580px) {
+  section main #home p #textContainer {
+    font-size: 30px;
+  }
 }
 section #features {
   display: flex;
