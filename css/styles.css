@@ -273,6 +273,9 @@ section #features .featuresContainer .featuresItems:hover {
   background-color: white;
   color: black;
 }
+section #features .featuresContainer .featuresItems:hover h2 {
+  color: black;
+}
 section #features .featuresContainer .featuresItems h2 {
   width: 100%;
   text-align: center;
@@ -303,9 +306,9 @@ section #skills #skills-titles {
   align-self: center;
   border-radius: 20px;
   align-items: center;
-  background-color: var(--gris-fonce);
   height: 80px;
   width: 80%;
+  justify-content: center;
 }
 section #skills #skills-titles p {
   display: flex;
@@ -436,15 +439,13 @@ section #projects #projects-content #sites div {
 }
 section #projects #projects-content #sites div img {
   width: 100%;
-  height: 500px;
-  object-fit: fill;
+  object-fit: 100%;
   object-position: top;
   border-radius: 10px;
   margin-bottom: 1rem;
 }
 @media (max-width: 580px) {
   section #projects #projects-content #sites div img {
-    object-fit: 100%;
     height: 200px;
   }
 }
@@ -452,6 +453,10 @@ section #projects #projects-content #sites div button {
   padding: 0 20px;
   border-radius: 10px;
   background-color: var(--bleu-ciel);
+}
+section #projects #projects-content #sites div button:hover {
+  transition: all 0.2s ease-in-out;
+  transform: scale(1.1);
 }
 section footer {
   background-color: black;
