@@ -358,7 +358,8 @@ section {
             border-radius: 10px;
             margin-bottom: 1rem;
             @include xs{
-
+              object-fit: 100%;
+              height: 200px;
             }
           }
           button {
