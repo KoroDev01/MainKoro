@@ -99,13 +99,13 @@ card("RESPONSIVE WEBSITES", `<i class="fa-solid fa-mobile"></i>`);
 card("FRONT-END DEVELOPPER", `<i class="fa-solid fa-desktop"></i>`);
 card("BACK-END DEVELOPPER", `<i class="fa-solid fa-database"></i>`);
 
-function skillsPctg(language, pourcentage) {
+function skillsPctg(language, pourcentage,logo) {
   const divBars = document.getElementById("bars");
   divBars.className = "bars";
   const divLanguages = document.createElement("div");
   divLanguages.className = language.toLowerCase();
   const h3 = document.createElement("h3");
-  h3.textContent = language.toUpperCase();
+  h3.innerHTML = `${language.toUpperCase()}  ${logo}`;
   const divBarSkill = document.createElement("div");
   divBarSkill.className = "bar-skill";
   const divBarSkillProgress = document.createElement("div");
@@ -131,10 +131,10 @@ function skillsPctg(language, pourcentage) {
     divBarSkillPercentage.style.left = `${pourcentage}%`;
   }, 100);
 }
-skillsPctg("HTML", 100);
-skillsPctg("CSS/SASS", 100);
-skillsPctg("JS", 80);
-skillsPctg("REACT", 15);
+skillsPctg("HTML", 100,`<i class="bi bi-filetype-html"></i>`);
+skillsPctg("CSS/SASS", 100, `<i class="bi bi-css"></i>`);
+skillsPctg("JS", 80,`<i class="bi bi-javascript"></i>`);
+skillsPctg("REACT", 15,`<i class="fi fi-brands-atom"></i>`);
 
 function loadProjects(titre, image, lien) {
   const divProjectsContent = document.getElementById("projects-content");
@@ -157,7 +157,7 @@ function loadProjects(titre, image, lien) {
   divSitesContainer.append(imgSite, h2, btn);
   btn.appendChild(a);
 }
-loadProjects("Le journal du lundi", "img/site11.png");
+loadProjects("Le journal du lundi", "img/site11.png",);
 loadProjects("Mon CV en ligne", "img/site2.png");
 loadProjects("Agence Ledor", "img/site31.png");
 loadProjects("Café Florette", "img/s41.png");

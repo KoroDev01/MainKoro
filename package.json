@@ -19,6 +19,7 @@
   "dependencies": {
     "@tailwindcss/postcss": "^4.1.14",
     "@tailwindcss/vite": "^4.1.14",
+    "bootstrap-icons": "^1.13.1",
     "sass": "^1.93.3"
   }
 }
