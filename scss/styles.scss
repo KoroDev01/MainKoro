@@ -31,7 +31,7 @@ section {
     color: white;
     font-size: 1.5rem;
     z-index: 99;
-    @include xs{
+    @include xs {
       display: none;
     }
     img {
@@ -52,7 +52,9 @@ section {
             text-decoration: none;
 
             &:hover {
-              color: var(--secondary-color);
+              text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #fffdfe;
+              color: #ffffff;
+              
 
               transition: all 0.2s ease-in-out;
               font-size: 1.9rem;
@@ -79,6 +81,8 @@ section {
             color: var(--secondary-color);
             transition: all 0.2s ease-out;
             font-size: 2.2rem;
+            text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #fffdfe;
+              color: #ffffff;
           }
         }
       }
@@ -87,7 +91,7 @@ section {
   main {
     width: calc(100% - 290px);
     color: white;
-    @include xs{
+    @include xs {
       width: 100vw;
     }
     .home {
@@ -98,10 +102,9 @@ section {
         top: 0;
         height: 100vh;
         width: calc(100% - 290px);
-        @include xs{
-      width: 100vw;
-      
-    }
+        @include xs {
+          width: 100vw;
+        }
       }
     }
 
@@ -119,31 +122,28 @@ section {
 
         margin-bottom: 20px;
         @include xs {
-        text-align: center;
-        
-      }
+          text-align: center;
+        }
       }
       p {
         padding-right: 80px;
         font-size: 2rem;
         text-align: center;
         @include xs {
-        text-align: center;
-        font-size: 25px;
-      }
+          text-align: center;
+          font-size: 25px;
+        }
         span {
           color: var(--secondary-color);
-
         }
         #textContainer {
           font-family: monospace;
           font-size: 40px;
           color: #01b7ff;
           border-right: 2px solid #f5f5f5;
-                    @include xs {
-        
-        font-size: 30px;
-      }
+          @include xs {
+            font-size: 30px;
+          }
         }
       }
     }
@@ -182,7 +182,7 @@ section {
           transform: scale(1.2);
           background-color: white;
           color: black;
-          h2{
+          h2 {
             color: black;
           }
         }
@@ -209,19 +209,17 @@ section {
     flex-direction: column;
     padding: 20px;
     align-items: center;
-    
+
     h2 {
       margin-top: 10px;
       font-size: 20px;
-      
-      
     }
     #skills-titles {
       display: flex;
       align-self: center;
       border-radius: 20px;
       align-items: center;
-      
+
       height: 80px;
       width: 80%;
       justify-content: center;
@@ -244,23 +242,23 @@ section {
       flex-wrap: wrap;
       justify-content: space-between;
       color: #f5f5f5;
-      @include xs{
+      @include xs {
         width: 100% !important;
-      flex-direction: column;
-    }
+        flex-direction: column;
+      }
       > div {
         // Style pour chaque compétence
         padding-top: 60px;
         width: 40%;
         border-radius: 10px;
         color: var(--blanc);
-        @include xs{
+        @include xs {
           width: 100%;
         }
-        h3{
+        h3 {
           text-align: center;
         }
-        > div{
+        > div {
           display: flex;
           flex-direction: column;
         }
@@ -315,7 +313,7 @@ section {
   #projects {
     border-top: white 1px solid;
     background-color: var(--gris);
-    
+
     flex-direction: column;
     h2 {
       color: white;
@@ -327,10 +325,9 @@ section {
     #projects-content {
       display: flex;
       flex-wrap: wrap;
-      
+
       @include xs {
         flex-direction: column;
-        
       }
       #sites {
         display: flex;
@@ -344,9 +341,8 @@ section {
         max-height: 100%;
         color: #f5f5f5;
         @include xs {
-        width: 100%;
-        
-      }
+          width: 100%;
+        }
         div {
           min-width: 50;
           width: 80%;
@@ -364,7 +360,7 @@ section {
             object-position: top;
             border-radius: 10px;
             margin-bottom: 1rem;
-            @include xs{
+            @include xs {
               // object-fit: 100%;
               height: 200px;
             }
@@ -373,7 +369,7 @@ section {
             padding: 0 20px;
             border-radius: 10px;
             background-color: var(--bleu-ciel);
-            &:hover{
+            &:hover {
               transition: all 0.2s ease-in-out;
               transform: scale(1.1);
             }

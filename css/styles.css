@@ -145,7 +145,8 @@ section header nav ul li a {
   text-decoration: none;
 }
 section header nav ul li a:hover {
-  color: var(--secondary-color);
+  text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #fffdfe;
+  color: #ffffff;
   transition: all 0.2s ease-in-out;
   font-size: 1.9rem;
 }
@@ -170,6 +171,8 @@ section header nav .social a:hover {
   color: var(--secondary-color);
   transition: all 0.2s ease-out;
   font-size: 2.2rem;
+  text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #fffdfe;
+  color: #ffffff;
 }
 section main {
   width: calc(100% - 290px);
