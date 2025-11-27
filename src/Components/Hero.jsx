@@ -109,7 +109,7 @@ export default function Hero() {
   return (
     <motion.section
       id="home"
-      className="flex flex-col items-center justify-center text-center min-h-screen max-w-screen px-4 relative"
+      className="flex flex-col items-center justify-center text-center min-h-screen max-w-screen px-4 relative pt-30 sm:pt-0"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}>
