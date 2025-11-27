@@ -1,8 +1,40 @@
 /* eslint-disable no-unused-vars */
 import { motion } from "framer-motion";
 import { Mail, MapPin, Phone, Send } from "lucide-react";
+import { useRef, useState } from "react";
+import emailjs from "emailjs-com";
 
 export default function Contact() {
+  const formRef = useRef();
+  const [isSending, setIsSending] = useState(false);
+  const [messageSent, setMessageSent] = useState(false);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setIsSending(true);
+
+    emailjs
+      .sendForm(
+        "service_wq35ac2", // Remplacez par votre Service ID
+        "template_pydm2fh", // Remplacez par votre Template ID
+        formRef.current,
+        "16TlZL_rgfcidG4Cx" // Remplacez par votre Public Key
+      )
+      .then((result) => {
+        console.log("Message envoyé avec succès!", result.text);
+        setMessageSent(true);
+        formRef.current.reset();
+        setTimeout(() => setMessageSent(false), 5000);
+      })
+      .catch((error) => {
+        console.error("Erreur lors de l'envoi:", error.text);
+        alert("Erreur lors de l'envoi du message. Veuillez réessayer.");
+      })
+      .finally(() => {
+        setIsSending(false);
+      });
+  };
+
   return (
     <section id="contact" className="py-16 md:py-20 px-4 sm:px-6 bg-slate-900">
       <div className="container mx-auto max-w-4xl">
@@ -87,7 +119,19 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}>
-            <form className="space-y-4 sm:space-y-6">
+            {messageSent && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="mb-6 p-4 bg-green-500/20 border border-green-500/50 rounded-lg text-green-400 text-center">
+                ✅ Message envoyé avec succès ! Je vous répondrai rapidement.
+              </motion.div>
+            )}
+
+            <form
+              ref={formRef}
+              onSubmit={sendEmail}
+              className="space-y-4 sm:space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label
@@ -98,8 +142,10 @@ export default function Contact() {
                   <input
                     type="text"
                     id="name"
+                    name="from_name"
                     className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-slate-800 border border-slate-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-colors text-sm sm:text-base"
                     placeholder="Votre nom"
+                    required
                   />
                 </div>
                 <div>
@@ -111,8 +157,10 @@ export default function Contact() {
                   <input
                     type="email"
                     id="email"
+                    name="from_email"
                     className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-slate-800 border border-slate-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-colors text-sm sm:text-base"
                     placeholder="votre@email.com"
+                    required
                   />
                 </div>
               </div>
@@ -126,8 +174,10 @@ export default function Contact() {
                 <input
                   type="text"
                   id="subject"
+                  name="subject"
                   className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-slate-800 border border-slate-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-colors text-sm sm:text-base"
                   placeholder="Sujet du message"
+                  required
                 />
               </div>
 
@@ -139,18 +189,30 @@ export default function Contact() {
                 </label>
                 <textarea
                   id="message"
+                  name="message"
                   rows="4"
                   className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-slate-800 border border-slate-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-colors resize-none text-sm sm:text-base"
-                  placeholder="Votre message..."></textarea>
+                  placeholder="Votre message..."
+                  required></textarea>
               </div>
 
               <motion.button
                 type="submit"
-                className="w-full bg-linear-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 text-sm sm:text-base"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}>
-                <Send size={18} />
-                Envoyer le message
+                disabled={isSending}
+                className="w-full bg-linear-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 text-sm sm:text-base disabled:opacity-50 disabled:cursor-not-allowed"
+                whileHover={!isSending ? { scale: 1.02 } : {}}
+                whileTap={!isSending ? { scale: 0.98 } : {}}>
+                {isSending ? (
+                  <>
+                    <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                    Envoi en cours...
+                  </>
+                ) : (
+                  <>
+                    <Send size={18} />
+                    Envoyer le message
+                  </>
+                )}
               </motion.button>
             </form>
           </motion.div>
