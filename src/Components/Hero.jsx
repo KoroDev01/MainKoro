@@ -109,7 +109,7 @@ export default function Hero() {
   return (
     <motion.section
       id="home"
-      className="flex flex-col items-center justify-center text-center min-h-screen px-4 relative"
+      className="flex flex-col items-center justify-center text-center min-h-screen max-w-screen px-4 relative"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}>
@@ -138,7 +138,7 @@ export default function Hero() {
           }}>
           Faiz, Développeur Full Stack
         </motion.h1>
-        <p className="text-lg md:text-2xl mb-8 max-w-2xl text-gray-300">
+        <p className="text-base sm:text-lg md:text-2xl mb-6 sm:mb-8 max-w-xl sm:max-w-2xl text-gray-300 mx-auto">
           Je crée des expériences web modernes et performantes avec une
           attention particulière aux détails et à l'expérience utilisateur.
         </p>
@@ -148,14 +148,14 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-20">
             <motion.a
               href="#contact"
-              className="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold px-8 py-4 rounded-lg transition-colors duration-300 mx-6"
+              className="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold px-8 py-4 rounded-lg transition-colors duration-300 mx-6 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-16 sm:mb-20"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}>
               Me contacter
             </motion.a>
             <motion.a
               href="#projects"
-              className="border-cyan-500 border-2 hover:bg-cyan-500/10 px-8 py-4 text-cyan-500 font-semibold rounded-lg transition-colors duration-300 "
+              className="border-cyan-500 border-2 hover:bg-cyan-500/10 px-8 py-4 text-cyan-500 font-semibold rounded-lg transition-colors duration-300 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-16 sm:mb-20"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}>
               Voir mes projets

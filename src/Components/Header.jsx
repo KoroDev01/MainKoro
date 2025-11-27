@@ -19,20 +19,20 @@ export default function Header() {
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
-    setIsMenuOpen(false); // Fermer le menu après clic
+    setIsMenuOpen(false);
   };
 
   return (
     <header className="fixed w-full p-4 bg-linear-to-r from-[#020617] to-[#0E162A] z-50">
-      <div className="flex items-center justify-between w-auto">
+      <div className="flex items-center justify-between max-w-7xl mx-auto">
         <motion.a
           whileHover={{ scale: 1.05 }}
           href="#home"
-          className="text-2xl font-medium bg-linear-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent">
+          className="text-xl sm:text-2xl font-medium bg-linear-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent">
           KoroDev
         </motion.a>
 
-        {/* Navigation desktop (hidden sur mobile) */}
+        {/* Navigation desktop */}
         <nav className="hidden sm:flex">
           {navItems.map((item) => (
             <motion.a
@@ -42,19 +42,19 @@ export default function Header() {
                 e.preventDefault();
                 scrollToSection(item.href);
               }}
-              whileHover={{ y: -5 }}
-              className="mx-2 p-2 text-lg hover:text-blue-500 text-[16px] transition-colors duration-300">
+              whileHover={{ y: -2 }}
+              className="mx-2 sm:mx-3 p-2 text-base sm:text-lg hover:text-cyan-400 transition-colors duration-300">
               {item.label}
             </motion.a>
           ))}
         </nav>
 
-        {/* Bouton menu burger (visible seulement sur mobile) */}
+        {/* Bouton menu burger */}
         <motion.button
           className="sm:hidden p-2 text-white hover:text-cyan-400 transition-colors"
           whileTap={{ scale: 0.95 }}
           onClick={() => setIsMenuOpen(!isMenuOpen)}>
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
         </motion.button>
       </div>
 
@@ -67,7 +67,7 @@ export default function Header() {
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
             className="sm:hidden bg-slate-900/95 backdrop-blur-md border-t border-slate-700 mt-4 overflow-hidden">
-            <div className="py-4">
+            <div className="py-2">
               {navItems.map((item, index) => (
                 <motion.a
                   key={item.href}
@@ -79,7 +79,7 @@ export default function Header() {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  className="block py-3 px-6 text-white hover:bg-slate-800 hover:text-cyan-400 transition-colors border-b border-slate-800 last:border-b-0">
+                  className="block py-3 px-6 text-white hover:bg-slate-800 hover:text-cyan-400 transition-colors border-b border-slate-800 last:border-b-0 text-base">
                   {item.label}
                 </motion.a>
               ))}
