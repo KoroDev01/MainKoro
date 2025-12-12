@@ -1,24 +1,27 @@
 /* eslint-disable no-unused-vars */
 import { motion } from "framer-motion";
 import Journal from "../assets/img/leJournalDuLundiThumbnail.png";
-import cv from "../assets/img/monCvThumbnail.png";
+
 import ancienDesign from "../assets/img/ancienDesignThumbnail.png";
+import beauteNails from "../assets/img/BeauteNails.png";
 export default function Projects() {
   const projects = [
     {
       title: "Le Journal du Lundi",
       description:
-        "Site d'actualités hebdomadaires avec articles, images et vidéos intégrées (site n'est plus actif).",
+        "Site d'actualités hebdomadaires avec articles, images et vidéos intégrées.",
       image: Journal,
+      dispo: false,
       tags: ["HTML", "CSS", "SASS"],
       github: "#",
       demo: "#",
     },
     {
-      title: "Mon CV en ligne",
+      title: "Site Beauté Nails",
       description:
-        "CV interactif en ligne avec sections téléchargeables et design responsive (site n'est plus actif)",
-      image: cv,
+        "Site vitrine pour un salon de manucure avec galerie et formulaire de contact.",
+      image: beauteNails,
+      dispo: false,
       tags: ["HTML", "CSS", "SASS"],
       github: "#",
       demo: "#",
@@ -26,9 +29,10 @@ export default function Projects() {
     {
       title: "Ancien Design de Mon Portfolio",
       description:
-        "Portfolio personnel avec animations et transitions fluides (site n'est plus actif).",
+        "Portfolio personnel avec animations et transitions fluides.",
       image: ancienDesign,
-      tags: ["HTML", "CSS", "SASS"," JavaScript"],
+      dispo: false,
+      tags: ["HTML", "CSS", "SASS", " JavaScript"],
       github: "#",
       demo: "#",
     },
@@ -74,6 +78,17 @@ export default function Projects() {
                 <p className="text-slate-400 mb-4 px-5">
                   {project.description}
                 </p>
+                <div className="flex flex-wrap mb-1 px-5">
+                  {project.dispo ? (
+                    <span className="text-sm bg-green-500/20 text-green-400 rounded-full px-3 py-1 mr-2 mb-2 ">
+                      Online
+                    </span>
+                  ) : (
+                    <span className="text-sm bg-red-500/20 text-red-400 rounded-full px-3 py-1 mr-2 mb-2 ">
+                      Offline
+                    </span>
+                  )}
+                </div>
                 <div className="flex flex-wrap mb-4 px-5">
                   {project.tags.map((tag) => (
                     <span
