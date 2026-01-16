@@ -8,8 +8,8 @@ export default function Skills() {
         skills: [
           { name: "React", level: 100 },
           { name: "JavaScript", level: 100 },
-          { name: "Tailwind CSS", level: 100 },
-          { name: "CSS SCSS", level: 100 },
+          { name: "Tailwind CSS SCSS", level: 100 },
+          { name: "Figma", level: 100 },
         ],
       },
       {
