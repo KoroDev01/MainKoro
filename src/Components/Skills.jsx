@@ -6,22 +6,21 @@ export default function Skills() {
       {
         title: "Frontend",
         skills: [
-          { name: "React", level: 95 },
-          { name: "JavaScript", level: 90 },
-          { name: "Tailwind CSS", level: 95 },
-          { name: "Next.js", level: 85 },
+          { name: "React", level: 100 },
+          { name: "JavaScript", level: 100 },
+          { name: "Tailwind CSS", level: 100 },
+          { name: "CSS SCSS", level: 100 },
         ],
       },
       {
         title: "Backend",
         skills: [
-          { name: "Node.js", level: 90 },
-          { name: "", level: 0 },
-          { name: "Sql/NoSql", level: 85 },
-          { name: "MongoDB", level: 80 },
+          { name: "Sql", level: 100 },
+          { name: "PostgreSQL", level: 100 },
+          { name: "MongoDB", level: 100 },
+          { name: "Express", level: 100 },
         ],
       },
-
     ];
   return (
     <motion.section id="skills"
@@ -49,7 +48,7 @@ export default function Skills() {
                 <div key={skill.name}>
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-slate-300">{skill.name}</span>
-                    <span className="text-cyan-400">{skill.level}%</span>
+
                   </div>
                   <div className="h-2 bg-slate-800 rounded-full overflow-hidden">
                     <motion.div
