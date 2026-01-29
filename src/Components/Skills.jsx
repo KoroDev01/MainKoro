@@ -18,7 +18,7 @@ export default function Skills() {
           { name: "Sql", level: 100 },
           { name: "PostgreSQL", level: 100 },
           { name: "MongoDB", level: 100 },
-          { name: "Express", level: 100 },
+          { name: "Express JS", level: 100 },
         ],
       },
     ];
