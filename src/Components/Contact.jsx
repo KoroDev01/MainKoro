@@ -68,7 +68,7 @@ export default function Contact() {
               <motion.div
                 whileHover={{ scale: 1.02 }}
                 className="flex  justify-center items-center gap-3 sm:gap-4 p-5 sm:p-4 rounded-lg border border-transparent hover:border-cyan-500 bg-slate-800/50 transition-all">
-                <div className="w-100 h-10 sm:w-12 sm:h-12 bg-linear-to-r from-cyan-500 to-blue-500 rounded-lg flex items-center justify-center shrink-0">
+                <div className=" p-4 h-10 sm:w-12 sm:h-12 bg-linear-to-r from-cyan-500 to-blue-500 rounded-lg flex items-center justify-center shrink-0">
                   <Phone className="text-white" size={18} />
                 </div>
                 <div className="min-w-0">
