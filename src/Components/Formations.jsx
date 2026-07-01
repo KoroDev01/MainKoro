@@ -6,33 +6,33 @@ export default function Formations() {
       title: "Passionné par le développement et l'informatique",
       school: "En autonomie et en autodidacte avant de suivre une formation",
       year: "Pendant toute mon enfance et mon adolescence",
-      img: "/src/assets/img/Gemini_Generated_Image_t7i1j5t7i1j5t7i1.png", // Remplace par tes vraies images
+      img: "../assets/img/Gemini_Generated_Image_t7i1j5t7i1j5t7i1.png", // Remplace par tes vraies images
     },
     {
       title: "Certificat De Réussite : Développeur Application IOS ",
       school: "Simplon.co Toulouse",
       year: "04/2024 - 05/2024",
-      img: "/src/assets/img/ios _dev.png",
+      img: "../assets/img/ios _dev.png",
     },
     {
       title:
         "Certificats de réussite : Développement Web & Mobile Html - Css - Scss",
       school: "Dyma.fr",
       year: "06/2024 - 07/2024",
-      img: "src/assets/img/dyma.png",
+      img: "../assets/img/dyma.png",
     },
     {
       title:
         "Attestation de formation du titre professionnel : DEVELOPPEUR WEB ET WEB MOBILE",
       school: "Afec - La rochelle",
       year: "09/2025 - 06/2026",
-      img: "src/assets/img/formation_afec.png",
+      img: "../assets/img/formation_afec.png",
     },
     {
       title: "Titre Professionnel : DEVELOPPEUR WEB ET WEB MOBILE de niveau 5 ",
       school: "Afec - La rochelle",
       year: "09/2025 - 06/2026",
-      img: "src/assets/img/diplome_afec.png",
+      img: "../assets/img/diplome_afec.png",
     },
   ];
 
