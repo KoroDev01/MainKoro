@@ -1,3 +1,4 @@
+import dyma from "../assets/img/dyma.png";
 import { motion } from "framer-motion";
 
 export default function Formations() {
@@ -19,7 +20,7 @@ export default function Formations() {
         "Certificats de réussite : Développement Web & Mobile Html - Css - Scss",
       school: "Dyma.fr",
       year: "06/2024 - 07/2024",
-      img: "../assets/img/dyma.png",
+      img: dyma,
     },
     {
       title:
