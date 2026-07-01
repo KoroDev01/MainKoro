@@ -1,0 +1,91 @@
+KoroDev
+Accueil
+À propos
+Compétences
+Projets
+Contact
+Bonjour, je suis
+Développeur Full Stack
+Je crée des expériences web modernes et performantes avec une attention particulière aux détails et à l'expérience utilisateur.
+Me contacter
+En savoir plus
+À propos de moi
+Passionné par le développement web, je transforme des idées en solutions digitales innovantes. Avec plusieurs années d'expérience, je maîtrise les technologies modernes pour créer des applications web performantes et scalables.
+Code de qualité
+Performance
+J'écris du code propre, maintenable et bien documenté
+Optimisation des performances pour une expérience fluide
+UX/UI Design
+Réactivité
+Interface intuitive centrée sur l'utilisateur
+Développement rapide et communication transparente
+Compétences
+Technologies et outils que je maîtrise
+Frontend
+Backend
+DevOps & Outils
+React
+95%
+Node.js
+90%
+Git
+95%
+TypeScript
+90%
+Python
+80%
+Docker
+80%
+Tailwind CSS
+95%
+PostgreSQL
+85%
+AWS
+75%
+Next.js
+85%
+MongoDB
+80%
+CI/CD
+80%
+Projets réalisés
+Quelques projets sur lesquels j'ai travaillé
+E-Commerce Platform
+Application Mobile
+Dashboard Analytics
+Plateforme e-commerce complète avec gestion des paiements, panier et authentification.
+Application mobile responsive pour la gestion de projets avec collaboration en temps réel.
+Tableau de bord moderne avec visualisation de données et statistiques en temps réel.
+React Native
+Firebase
+Redux
+Next.js
+TypeScript
+Chart.js
+React
+Node.js
+Stripe
+MongoDB
+Code
+Demo
+PostgreSQL
+Code
+Demo
+Code
+Demo
+Me contacter
+Une question ? Un projet ? N'hésitez pas à me contacter
+Restons en contact
+Votre nom
+Je suis toujours ouvert aux nouvelles opportunités et collaborations. N'hésitez pas à me contacter pour discuter de votre projet.
+Votre email
+Email
+Sujet
+contact@korodev.com
+Votre message
+Téléphone
++33 6 12 34 56 78
+Localisation
+Paris, France
+Envoyer le message
+© 2025 KoroDev. Fait avec
