@@ -1,4 +1,8 @@
+import ado from "../assets/img/autoditacte.png";
+import ios from "../assets/img/ios _dev.png";
 import dyma from "../assets/img/dyma.png";
+import afec from "../assets/img/formation_afec.png";
+import diplome from "../assets/img/diplome_afec.png";
 import { motion } from "framer-motion";
 
 export default function Formations() {
@@ -7,13 +11,13 @@ export default function Formations() {
       title: "Passionné par le développement et l'informatique",
       school: "En autonomie et en autodidacte avant de suivre une formation",
       year: "Pendant toute mon enfance et mon adolescence",
-      img: "../assets/img/Gemini_Generated_Image_t7i1j5t7i1j5t7i1.png", // Remplace par tes vraies images
+      img: ado, // Remplace par tes vraies images
     },
     {
       title: "Certificat De Réussite : Développeur Application IOS ",
       school: "Simplon.co Toulouse",
       year: "04/2024 - 05/2024",
-      img: "../assets/img/ios _dev.png",
+      img: ios,
     },
     {
       title:
@@ -27,13 +31,13 @@ export default function Formations() {
         "Attestation de formation du titre professionnel : DEVELOPPEUR WEB ET WEB MOBILE",
       school: "Afec - La rochelle",
       year: "09/2025 - 06/2026",
-      img: "../assets/img/formation_afec.png",
+      img: afec,
     },
     {
       title: "Titre Professionnel : DEVELOPPEUR WEB ET WEB MOBILE de niveau 5 ",
       school: "Afec - La rochelle",
       year: "09/2025 - 06/2026",
-      img: "../assets/img/diplome_afec.png",
+      img: diplome,
     },
   ];
 
