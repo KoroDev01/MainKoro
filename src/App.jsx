@@ -33,8 +33,8 @@ function App() {
       <Header />
       <Hero />
       <About />
-      <Skills />
       <Formation />
+      <Skills />
       <Projects />
       <Contact />
       <Footer />
