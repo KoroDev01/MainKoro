@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, ArrowDown } from "lucide-react";
 import { useEffect, useRef } from "react";
@@ -184,11 +183,10 @@ export default function Hero() {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-slate-400 hover:text-cyan-400 transition-colors p-3 bg-white/5 rounded-full backdrop-blur-sm"
+                  className="text-slate-400 hover:text-cyan-400 hover:bg-cyan-500/10 transition-colors p-3 bg-white/5 rounded-full backdrop-blur-sm"
                   whileHover={{
                     scale: 1.2,
                     rotate: index % 2 === 0 ? -5 : 5,
-                    backgroundColor: "rgba(6, 182, 212, 0.1)",
                   }}
                   whileTap={{ scale: 0.9 }}>
                   <Icon size={24} />

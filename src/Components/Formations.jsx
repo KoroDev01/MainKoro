@@ -1,5 +1,5 @@
-import ado from "../assets/img/autoditacte.png";
-import ios from "../assets/img/ios _dev.png";
+import autodidacte from "../assets/img/autodidacte.png";
+import iosDev from "../assets/img/ios_dev.png";
 import dyma from "../assets/img/dyma.png";
 import afec from "../assets/img/formation_afec.png";
 import diplome from "../assets/img/diplome_afec.png";
@@ -11,13 +11,13 @@ export default function Formations() {
       title: "Passionné par le développement et l'informatique",
       school: "En autonomie et en autodidacte avant de suivre une formation",
       year: "Pendant toute mon enfance et mon adolescence",
-      img: ado, // Remplace par tes vraies images
+      img: autodidacte,
     },
     {
       title: "Certificat De Réussite : Développeur Application IOS ",
       school: "Simplon.co Toulouse",
       year: "04/2024 - 05/2024",
-      img: ios,
+      img: iosDev,
     },
     {
       title:
@@ -51,7 +51,7 @@ export default function Formations() {
       <h2 className="text-4xl md:text-5xl font-bold mb-6 text-center">
         Formations
       </h2>
-      <div className="w-20 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 mx-auto mb-8"></div>
+      <div className="w-20 h-1 bg-linear-to-r from-cyan-500 to-blue-500 mx-auto mb-8"></div>
       <p className="text-xl text-slate-400 pb-5 text-center">
         Diplômes et certifications obtenus
       </p>

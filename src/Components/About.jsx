@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { motion } from "framer-motion";
 import { Code2, Rocket, Users, Zap } from "lucide-react";
 

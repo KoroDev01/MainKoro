@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
@@ -8,6 +7,7 @@ export default function Header() {
   const navItems = [
     { label: "Accueil", href: "#home" },
     { label: "À propos", href: "#about" },
+    { label: "Formations", href: "#formations" },
     { label: "Compétences", href: "#skills" },
     { label: "Projets", href: "#projects" },
     { label: "Contact", href: "#contact" },
