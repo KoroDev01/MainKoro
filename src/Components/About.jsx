@@ -39,11 +39,12 @@ export default function About() {
         </h2>
         <div className="w-20 h-1 bg-linear-to-r from-cyan-500 to-blue-500 mx-auto mb-6 md:mb-8"></div>
         <p className="text-base sm:text-lg md:text-xl max-w-3xl text-gray-300 leading-relaxed">
-          Passionné par le développement web et toujours avide d'apprendre de
-          nouvelles technologies, je m'efforce de créer des expériences
-          utilisateur innovantes et engageantes. Mon objectif est de contribuer
-          à des projets qui font une différence tout en continuant à évoluer
-          professionnellement.
+          Passionné par le développement web, je suis développeur freelance basé
+          à <strong className="text-white">Rochefort</strong>, en
+          Charente-Maritime. J&apos;accompagne les artisans, commerçants et PME
+          de <strong className="text-white">La Rochelle</strong>, Royan et des
+          alentours dans la création de sites internet sur mesure. Mon objectif
+          : des expériences web modernes qui vous apportent de vrais clients.
         </p>
       </motion.div>
 

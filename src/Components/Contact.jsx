@@ -74,7 +74,8 @@ export default function Contact() {
           </h2>
           <div className="w-20 h-1 bg-linear-to-r from-cyan-500 to-blue-500 mx-auto mb-6 md:mb-8"></div>
           <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
-            Vous avez un projet en tête ? Discutons-en !
+            Un projet web à Rochefort ou en Charente-Maritime ? Devis gratuit et
+            sans engagement.
           </p>
         </motion.div>
 
@@ -123,7 +124,9 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-white font-semibold text-sm sm:text-base">Localisation</p>
-                  <p className="text-gray-400 text-sm sm:text-base">France</p>
+                  <p className="text-gray-400 text-sm sm:text-base">
+                    Rochefort, Charente-Maritime (17)
+                  </p>
                 </div>
               </motion.div>
             </div>

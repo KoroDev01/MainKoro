@@ -135,11 +135,12 @@ export default function Hero() {
             damping: 15,
             duration: 0.8,
           }}>
-          Faiz, Développeur Full Stack
+          Faiz, Développeur Web à Rochefort
         </motion.h1>
         <p className="text-base sm:text-lg md:text-2xl mb-6 sm:mb-8 max-w-xl sm:max-w-2xl text-gray-300 mx-auto">
-          Je crée des expériences web modernes et performantes avec une
-          attention particulière aux détails et à l'expérience utilisateur.
+          Basé à Rochefort, j&apos;accompagne les entreprises de Charente-Maritime
+          dans la création de sites web modernes, performants et optimisés pour
+          Google.
         </p>
 
         <div className="relative">
