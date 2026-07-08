@@ -163,7 +163,7 @@ export default function Contact() {
                   name="name"
                   required
                   className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-cyan-500 transition-colors"
-                  placeholder="Jean Dupont"
+                  placeholder="Koro Dev"
                 />
               </div>
 
@@ -177,7 +177,7 @@ export default function Contact() {
                   name="email"
                   required
                   className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-cyan-500 transition-colors"
-                  placeholder="jean@exemple.com"
+                  placeholder="ABC@exemple.com"
                 />
               </div>
 
