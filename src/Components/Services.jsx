@@ -28,15 +28,7 @@ const services = [
   },
 ];
 
-const zones = [
-  "Rochefort",
-  "La Rochelle",
-  "Royan",
-  "Île de Ré",
-  "Île d'Oléron",
-  "Saintes",
-  "Charente-Maritime (17)",
-];
+
 
 export default function Services() {
   return (
@@ -93,15 +85,7 @@ export default function Services() {
             Je travaille avec des clients à Rochefort et dans toute la
             Charente-Maritime, en présentiel ou à distance.
           </p>
-          <div className="flex flex-wrap justify-center gap-3">
-            {zones.map((zone) => (
-              <span
-                key={zone}
-                className="text-sm bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 rounded-full px-4 py-1.5">
-                {zone}
-              </span>
-            ))}
-          </div>
+          
         </motion.div>
       </div>
     </section>
