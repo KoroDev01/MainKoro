@@ -46,7 +46,7 @@ export default function Hero() {
             </div>
 
             <h1 className="mb-6 text-4xl font-extrabold leading-[1.1] tracking-tight sm:text-5xl md:text-6xl lg:text-[3.5rem]">
-              Je crée des sites web qui{" "}
+              Développeur web freelance : des sites qui{" "}
               <span className="gradient-text">attirent des clients</span>
             </h1>
 

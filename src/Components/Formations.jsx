@@ -83,7 +83,7 @@ export default function Formations() {
                   <div className="flex justify-center md:w-24 md:shrink-0">
                     <div className="h-16 w-16 overflow-hidden rounded-2xl border border-white/10 bg-white/3 shadow-lg sm:h-20 sm:w-20">
                       {item.img ? (
-                        <img src={item.img} alt={item.title} className="h-full w-full object-cover" />
+                        <img src={item.img} alt={`Certification : ${item.title}`} className="h-full w-full object-cover" loading="lazy" decoding="async" />
                       ) : (
                         <div className="flex h-full w-full items-center justify-center bg-white/5">
                           <GraduationCap className="text-zinc-600" size={24} />

@@ -16,7 +16,7 @@ function App() {
     <div className="relative min-h-screen scroll-smooth text-white">
       <BackgroundMesh />
       <Header />
-      <main>
+      <main id="main-content">
         <Hero />
         <About />
         <Services />

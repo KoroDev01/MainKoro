@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
+Host: www.korodev.com
 Sitemap: https://www.korodev.com/sitemap.xml

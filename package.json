@@ -6,7 +6,7 @@
   "homepage": "https://korodev01.github.io/MainKoro",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && node scripts/inject-seo.js",
     "build:github": "VITE_BASE_PATH=/MainKoro/ vite build",
     "lint": "eslint .",
     "preview": "vite preview",

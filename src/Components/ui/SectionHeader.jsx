@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-export default function SectionHeader({ label, title, description, align = "center" }) {
+export default function SectionHeader({ label, title, description, align = "center", id }) {
   const alignClass =
     align === "left" ? "text-left items-start" : "text-center items-center";
 
@@ -14,7 +14,7 @@ export default function SectionHeader({ label, title, description, align = "cent
       {label && (
         <span className="section-label">{label}</span>
       )}
-      <h2 className="section-title">{title}</h2>
+      <h2 id={id} className="section-title">{title}</h2>
       {description && (
         <p className={`section-desc ${align === "center" ? "max-w-2xl" : "max-w-xl"}`}>
           {description}

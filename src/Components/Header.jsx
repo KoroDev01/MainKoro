@@ -52,7 +52,7 @@ export default function Header() {
           </span>
         </motion.a>
 
-        <nav className="hidden items-center gap-1 lg:flex">
+        <nav className="hidden items-center gap-1 lg:flex" aria-label="Navigation principale">
           {navItems.map((item) => (
             <a
               key={item.href}
@@ -92,7 +92,8 @@ export default function Header() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25 }}
-            className="overflow-hidden border-t border-white/5 bg-[#06060a]/95 backdrop-blur-xl lg:hidden">
+            className="overflow-hidden border-t border-white/5 bg-[#06060a]/95 backdrop-blur-xl lg:hidden"
+            aria-label="Menu mobile">
             <div className="section-container flex flex-col gap-1 py-4">
               {navItems.map((item, index) => (
                 <motion.a

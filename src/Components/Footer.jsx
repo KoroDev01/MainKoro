@@ -2,9 +2,10 @@ import { Github, Linkedin, Mail, ArrowUp } from "lucide-react";
 
 const footerLinks = [
   { label: "Accueil", href: "#home" },
-  { label: "Services", href: "#services" },
-  { label: "Projets", href: "#projects" },
-  { label: "Contact", href: "#contact" },
+  { label: "Création de sites web", href: "#services" },
+  { label: "Projets web", href: "#projects" },
+  { label: "FAQ développeur web", href: "#blog" },
+  { label: "Devis gratuit", href: "#contact" },
 ];
 
 const socialLinks = [
@@ -35,7 +36,7 @@ export default function Footer() {
             </p>
           </div>
 
-          <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2">
+          <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2" aria-label="Liens du pied de page">
             {footerLinks.map((link) => (
               <a
                 key={link.href}

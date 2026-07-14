@@ -1,16 +1,21 @@
 {
-  "name": "KoroDev",
+  "name": "KoroDev — Développeur web freelance",
   "short_name": "KoroDev",
-  "description": "Développeur web freelance — création de sites web pour clients partout en France.",
+  "description": "Création de sites vitrines, portfolios et applications web sur mesure. Clients partout en France.",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
-  "background_color": "#0f172a",
-  "theme_color": "#0f172a",
+  "lang": "fr-FR",
+  "dir": "ltr",
+  "background_color": "#06060a",
+  "theme_color": "#06060a",
+  "categories": ["business", "productivity"],
   "icons": [
     {
       "src": "/favicon.png",
       "sizes": "96x96",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
       "src": "/favicon.ico",

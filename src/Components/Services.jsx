@@ -34,10 +34,11 @@ const modes = ["Partout en France", "À distance", "En présentiel", "Internatio
 
 export default function Services() {
   return (
-    <section id="services" className="relative py-20 md:py-28">
+    <section id="services" className="relative py-20 md:py-28" aria-labelledby="services-heading">
       <div className="section-divider mb-20" />
       <div className="section-container">
         <SectionHeader
+          id="services-heading"
           label="Services"
           title="Création de sites web sur mesure"
           description="Développeur web freelance — j'accompagne les entreprises et indépendants partout en France, en présentiel ou à distance."

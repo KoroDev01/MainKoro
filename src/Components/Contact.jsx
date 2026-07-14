@@ -94,9 +94,9 @@ export default function Contact() {
 
               <div className="space-y-4">
                 {contactInfo.map(({ icon: Icon, label, value }) => (
-                  <div
+                  <address
                     key={label}
-                    className="flex items-center gap-4 rounded-xl border border-white/5 bg-white/2 p-4 transition-colors hover:border-indigo-500/20">
+                    className="flex items-center gap-4 rounded-xl border border-white/5 bg-white/2 p-4 not-italic transition-colors hover:border-indigo-500/20">
                     <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-indigo-500/15">
                       <Icon className="text-indigo-400" size={18} />
                     </div>
@@ -104,7 +104,7 @@ export default function Contact() {
                       <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">{label}</p>
                       <p className="truncate text-sm font-medium text-white">{value}</p>
                     </div>
-                  </div>
+                  </address>
                 ))}
               </div>
 

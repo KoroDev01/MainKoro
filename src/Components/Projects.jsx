@@ -92,7 +92,11 @@ export default function Projects() {
                 <div className={`relative overflow-hidden ${isFeatured ? "lg:h-full" : "h-52"}`}>
                   <img
                     src={project.image}
-                    alt={project.title}
+                    alt={`Aperçu du projet ${project.title} — développement web KoroDev`}
+                    loading="lazy"
+                    decoding="async"
+                    width={640}
+                    height={384}
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#06060a] via-transparent to-transparent opacity-60" />
