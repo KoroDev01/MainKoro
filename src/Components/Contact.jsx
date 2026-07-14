@@ -1,9 +1,16 @@
 import { motion } from "framer-motion";
-import { Mail, MapPin, Phone, Send } from "lucide-react";
+import { Mail, MapPin, Phone, Send, MessageSquare } from "lucide-react";
 import { useRef, useState } from "react";
+import SectionHeader from "./ui/SectionHeader";
 
 const FORMSUBMIT_URL =
   import.meta.env.VITE_FORMSUBMIT_URL ?? "https://formsubmit.co/ajax/malifaiz03@gmail.com";
+
+const contactInfo = [
+  { icon: Phone, label: "Téléphone", value: "+33 7 45 53 09 41" },
+  { icon: Mail, label: "Email", value: "malifaiz03@gmail.com" },
+  { icon: MapPin, label: "Localisation", value: "Rochefort, Charente-Maritime (17)" },
+];
 
 export default function Contact() {
   const formRef = useRef(null);
@@ -61,164 +68,144 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-16 md:py-20 px-4 sm:px-6 bg-slate-900">
-      <div className="container mx-auto max-w-5xl">
-        <motion.div
-          className="text-center mb-12 md:mb-16"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-white">
-            Contact
-          </h2>
-          <div className="w-20 h-1 bg-linear-to-r from-cyan-500 to-blue-500 mx-auto mb-6 md:mb-8"></div>
-          <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
-            Un projet web à Rochefort ou en Charente-Maritime ? Devis gratuit et
-            sans engagement.
-          </p>
-        </motion.div>
+    <section id="contact" className="relative py-20 md:py-28">
+      <div className="section-divider mb-20" />
+      <div className="section-container">
+        <SectionHeader
+          label="Contact"
+          title="Parlons de votre projet"
+          description="Un projet web en France ou à l'international ? Devis gratuit et sans engagement."
+        />
 
-        <div className="grid lg:grid-cols-2 gap-8 md:gap-12">
+        <div className="grid gap-8 lg:grid-cols-5 lg:gap-12">
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}>
-            <h3 className="text-xl sm:text-2xl font-bold mb-6 text-white text-center lg:text-left">
-              Me contacter
-            </h3>
+            transition={{ duration: 0.5 }}
+            className="lg:col-span-2">
+            <div className="glass-card h-full p-6 sm:p-8">
+              <div className="mb-6 flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-indigo-600">
+                  <MessageSquare className="text-white" size={18} />
+                </div>
+                <h3 className="text-lg font-bold text-white">Coordonnées</h3>
+              </div>
 
-            <div className="space-y-4 sm:space-y-6">
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-lg border border-transparent hover:border-cyan-500 bg-slate-800/50 transition-all">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-linear-to-r from-cyan-500 to-blue-500 rounded-lg flex items-center justify-center shrink-0">
-                  <Phone className="text-white" size={18} />
-                </div>
-                <div className="min-w-0">
-                  <p className="text-white font-semibold text-sm sm:text-base">Téléphone</p>
-                  <p className="text-gray-400 text-sm sm:text-base">+33 7 45 53 09 41</p>
-                </div>
-              </motion.div>
+              <div className="space-y-4">
+                {contactInfo.map(({ icon: Icon, label, value }) => (
+                  <div
+                    key={label}
+                    className="flex items-center gap-4 rounded-xl border border-white/5 bg-white/2 p-4 transition-colors hover:border-indigo-500/20">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-indigo-500/15">
+                      <Icon className="text-indigo-400" size={18} />
+                    </div>
+                    <div className="min-w-0">
+                      <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">{label}</p>
+                      <p className="truncate text-sm font-medium text-white">{value}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
 
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-lg border border-transparent hover:border-cyan-500 bg-slate-800/50 transition-all">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-linear-to-r from-cyan-500 to-blue-500 rounded-lg flex items-center justify-center shrink-0">
-                  <Mail className="text-white" size={18} />
-                </div>
-                <div className="min-w-0">
-                  <p className="text-white font-semibold text-sm sm:text-base">Email</p>
-                  <p className="text-gray-400 text-sm sm:text-base truncate">
-                    malifaiz03@gmail.com
-                  </p>
-                </div>
-              </motion.div>
-
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-lg border border-transparent hover:border-cyan-500 bg-slate-800/50 transition-all">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-linear-to-r from-cyan-500 to-blue-500 rounded-lg flex items-center justify-center shrink-0">
-                  <MapPin className="text-white" size={18} />
-                </div>
-                <div>
-                  <p className="text-white font-semibold text-sm sm:text-base">Localisation</p>
-                  <p className="text-gray-400 text-sm sm:text-base">
-                    Rochefort, Charente-Maritime (17)
-                  </p>
-                </div>
-              </motion.div>
+              <p className="mt-6 text-sm leading-relaxed text-zinc-500">
+                Je réponds généralement sous 24h. Premier échange gratuit pour comprendre
+                vos besoins et vous proposer la meilleure solution.
+              </p>
             </div>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}>
-            {messageSent && (
-              <motion.div
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="mb-6 p-4 bg-green-500/20 border border-green-500/50 rounded-lg text-green-400 text-center">
-                Message envoyé avec succès ! Je vous répondrai rapidement.
-              </motion.div>
-            )}
+            transition={{ duration: 0.5 }}
+            className="lg:col-span-3">
+            <div className="glass-card p-6 sm:p-8">
+              {messageSent && (
+                <motion.div
+                  initial={{ opacity: 0, y: -8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="mb-6 rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4 text-center text-sm text-emerald-400">
+                  Message envoyé avec succès ! Je vous répondrai rapidement.
+                </motion.div>
+              )}
 
-            {sendError && (
-              <div className="mb-6 p-4 bg-red-500/20 border border-red-500/50 rounded-lg text-red-400 text-center text-sm">
-                {sendError}
-              </div>
-            )}
+              {sendError && (
+                <div className="mb-6 rounded-xl border border-red-500/30 bg-red-500/10 p-4 text-center text-sm text-red-400">
+                  {sendError}
+                </div>
+              )}
 
-            <form ref={formRef} onSubmit={sendEmail} className="space-y-4">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1">
-                  Votre nom
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-cyan-500 transition-colors"
-                  placeholder="Koro Dev"
-                />
-              </div>
+              <form ref={formRef} onSubmit={sendEmail} className="space-y-4">
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <div>
+                    <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-zinc-400">
+                      Votre nom
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      required
+                      className="w-full rounded-xl border border-white/8 bg-white/3 px-4 py-3 text-sm text-white placeholder-zinc-600 transition-colors focus:border-indigo-500/50 focus:outline-none focus:ring-1 focus:ring-indigo-500/30"
+                      placeholder="Jean Dupont"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-zinc-400">
+                      Votre email
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      className="w-full rounded-xl border border-white/8 bg-white/3 px-4 py-3 text-sm text-white placeholder-zinc-600 transition-colors focus:border-indigo-500/50 focus:outline-none focus:ring-1 focus:ring-indigo-500/30"
+                      placeholder="contact@exemple.com"
+                    />
+                  </div>
+                </div>
 
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1">
-                  Votre email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-cyan-500 transition-colors"
-                  placeholder="ABC@exemple.com"
-                />
-              </div>
+                <div>
+                  <label htmlFor="subject" className="mb-1.5 block text-sm font-medium text-zinc-400">
+                    Sujet
+                  </label>
+                  <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    required
+                    className="w-full rounded-xl border border-white/8 bg-white/3 px-4 py-3 text-sm text-white placeholder-zinc-600 transition-colors focus:border-indigo-500/50 focus:outline-none focus:ring-1 focus:ring-indigo-500/30"
+                    placeholder="Création d'un site vitrine"
+                  />
+                </div>
 
-              <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-1">
-                  Sujet
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  required
-                  className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-cyan-500 transition-colors"
-                  placeholder="Votre sujet"
-                />
-              </div>
+                <div>
+                  <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-zinc-400">
+                    Votre message
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    required
+                    rows={5}
+                    className="w-full resize-none rounded-xl border border-white/8 bg-white/3 px-4 py-3 text-sm text-white placeholder-zinc-600 transition-colors focus:border-indigo-500/50 focus:outline-none focus:ring-1 focus:ring-indigo-500/30"
+                    placeholder="Décrivez votre projet, vos objectifs, votre budget..."
+                  />
+                </div>
 
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-1">
-                  Votre message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  required
-                  rows={5}
-                  className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-cyan-500 transition-colors resize-none"
-                  placeholder="Décrivez votre projet..."
-                />
-              </div>
-
-              <motion.button
-                type="submit"
-                disabled={isSending}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full flex items-center justify-center gap-2 bg-cyan-500 hover:bg-cyan-600 disabled:opacity-60 disabled:cursor-not-allowed text-white font-semibold px-6 py-3 rounded-lg transition-colors">
-                <Send size={18} />
-                {isSending ? "Envoi en cours..." : "Envoyer le message"}
-              </motion.button>
-            </form>
+                <motion.button
+                  type="submit"
+                  disabled={isSending}
+                  whileHover={{ scale: 1.01 }}
+                  whileTap={{ scale: 0.99 }}
+                  className="btn-primary w-full disabled:cursor-not-allowed disabled:opacity-60">
+                  <Send size={18} />
+                  {isSending ? "Envoi en cours..." : "Envoyer le message"}
+                </motion.button>
+              </form>
+            </div>
           </motion.div>
         </div>
       </div>

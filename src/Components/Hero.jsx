@@ -1,202 +1,146 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, ArrowDown } from "lucide-react";
-import { useEffect, useRef } from "react";
+import { Github, Linkedin, Mail, ArrowRight, MapPin, Sparkles } from "lucide-react";
 
-// Composant FlyingPointsCanvas
-const FlyingPointsCanvas = ({
-  speed = 1,
-  numPoints = 30,
-  pointSize = 30,
-  opacity = 0.05,
-  className = "",
-}) => {
-  const canvasRef = useRef(null);
-  const animationRef = useRef(null);
-  const flyingPointsRef = useRef([]);
+const socialLinks = [
+  { icon: Github, url: "https://github.com/KoroDev01", label: "GitHub" },
+  { icon: Linkedin, url: "https://www.linkedin.com/in/faiz-mali-4255932ab/", label: "LinkedIn" },
+  { icon: Mail, url: "mailto:malifaiz03@gmail.com", label: "Email" },
+];
 
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    const ctx = canvas.getContext("2d");
-    const parent = canvas.parentElement;
+const stats = [
+  { value: "4+", label: "Projets réalisés" },
+  { value: "100%", label: "Sur mesure" },
+  { value: "FR", label: "Clients partout" },
+];
 
-    const initializeCanvas = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = parent.offsetHeight;
-    };
-
-    const createFlyingPoints = () => {
-      flyingPointsRef.current = [];
-      for (let i = 0; i < numPoints; i++) {
-        const x = Math.random() * canvas.width;
-        const y = Math.random() * canvas.height;
-        const size = Math.random() * pointSize + 1;
-        const pointSpeed = (Math.random() - 0.5) * 2 * speed;
-        flyingPointsRef.current.push({ x, y, size, speed: pointSpeed });
-      }
-    };
-
-    const animate = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      for (const point of flyingPointsRef.current) {
-        point.x += point.speed;
-        if (point.x > canvas.width + point.size) {
-          point.x = 0 - point.size;
-          point.y = Math.random() * canvas.height;
-        }
-
-        ctx.fillStyle = `rgba(255, 255, 255, ${opacity})`;
-        ctx.beginPath();
-        ctx.arc(point.x, point.y, point.size, 0, Math.PI * 2);
-        ctx.fill();
-      }
-
-      animationRef.current = requestAnimationFrame(animate);
-    };
-
-    initializeCanvas();
-    createFlyingPoints();
-    animate();
-
-    const handleResize = () => {
-      initializeCanvas();
-      createFlyingPoints();
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-      if (animationRef.current) {
-        cancelAnimationFrame(animationRef.current);
-      }
-    };
-  }, [speed, numPoints, pointSize, opacity]);
-
-  return (
-    <canvas
-      ref={canvasRef}
-      className={className}
-      style={{
-        position: "absolute",
-        top: 0,
-        left: 0,
-        width: "100%",
-        height: "100%",
-        pointerEvents: "none",
-      }}
-    />
-  );
-};
+const codeLines = [
+  { indent: 0, parts: [{ text: "const ", color: "text-purple-400" }, { text: "projet", color: "text-cyan-300" }, { text: " = {", color: "text-zinc-400" }] },
+  { indent: 1, parts: [{ text: "client", color: "text-cyan-300" }, { text: ": ", color: "text-zinc-500" }, { text: '"Votre entreprise"', color: "text-emerald-400" }, { text: ",", color: "text-zinc-400" }] },
+  { indent: 1, parts: [{ text: "zone", color: "text-cyan-300" }, { text: ": ", color: "text-zinc-500" }, { text: '"Partout en France"', color: "text-emerald-400" }, { text: ",", color: "text-zinc-400" }] },
+  { indent: 1, parts: [{ text: "objectif", color: "text-cyan-300" }, { text: ": ", color: "text-zinc-500" }, { text: '"Plus de clients"', color: "text-emerald-400" }, { text: ",", color: "text-zinc-400" }] },
+  { indent: 1, parts: [{ text: "seo", color: "text-cyan-300" }, { text: ": ", color: "text-zinc-500" }, { text: "true", color: "text-amber-400" }, { text: ",", color: "text-zinc-400" }] },
+  { indent: 1, parts: [{ text: "responsive", color: "text-cyan-300" }, { text: ": ", color: "text-zinc-500" }, { text: "true", color: "text-amber-400" }] },
+  { indent: 0, parts: [{ text: "};", color: "text-zinc-400" }] },
+];
 
 export default function Hero() {
-  const socialLinks = [
-    {
-      icon: Github,
-      url: "https://github.com/KoroDev01",
-    },
-    {
-      icon: Linkedin,
-      url: "https://www.linkedin.com/in/faiz-mali-4255932ab/",
-    },
-    {
-      icon: Mail,
-      url: "mailto:malifaiz03@gmail.com",
-    },
-  ];
-
   return (
-    <motion.section
+    <section
       id="home"
-      className="flex flex-col items-center justify-center text-center min-h-screen max-w-screen px-4 relative pt-30 sm:pt-0"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1 }}>
-      {/* Canvas des points volants en arrière-plan */}
-      <FlyingPointsCanvas
-        speed={0.8}
-        numPoints={25}
-        pointSize={40}
-        opacity={0.03}
-      />
-
-      {/* Contenu principal */}
-      <div className="relative z-10">
-        <p className="text-cyan-500 text-lg md:text-xl mb-4">
-          Bonjour, je suis
-        </p>
-        <motion.h1
-          className="text-5xl md:text-7xl font-bold mb-6 bg-linear-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent"
-          initial={{ opacity: 0, y: -100, scale: 0.8 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{
-            type: "spring",
-            stiffness: 100,
-            damping: 15,
-            duration: 0.8,
-          }}>
-          Faiz, Développeur Web à Rochefort
-        </motion.h1>
-        <p className="text-base sm:text-lg md:text-2xl mb-6 sm:mb-8 max-w-xl sm:max-w-2xl text-gray-300 mx-auto">
-          Basé à Rochefort, j&apos;accompagne les entreprises de Charente-Maritime
-          dans la création de sites web modernes, performants et optimisés pour
-          Google.
-        </p>
-
-        <div className="relative">
-          {/* Boutons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-20">
-            <motion.a
-              href="#contact"
-              className="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold px-8 py-4 rounded-lg transition-colors duration-300 mx-6 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-16 sm:mb-20"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}>
-              Me contacter
-            </motion.a>
-            <motion.a
-              href="#projects"
-              className="border-cyan-500 border-2 hover:bg-cyan-500/10 px-8 py-4 text-cyan-500 font-semibold rounded-lg transition-colors duration-300 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-16 sm:mb-20"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}>
-              Voir mes projets
-            </motion.a>
-          </div>
-
-          {/* Flèche animée */}
+      className="relative flex min-h-screen items-center pt-24 pb-16 sm:pt-28">
+      <div className="section-container">
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <motion.div
-            className="absolute -bottom-8 left-1/2 transform -translate-x-1/2"
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}>
-            <ArrowDown className="text-cyan-400" size={32} />
-          </motion.div>
-
-          {/* Liens sociaux */}
-          <motion.div
-            className="absolute -bottom-24 left-1/2 transform -translate-x-1/2 flex gap-6"
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}>
-            {socialLinks.map((link, index) => {
-              const Icon = link.icon;
-              return (
+            transition={{ duration: 0.7 }}>
+            <div className="mb-6 flex flex-wrap items-center gap-3">
+              <span className="section-label">
+                <Sparkles size={12} className="mr-1.5 inline" />
+                Développeur Web Freelance
+              </span>
+              <span className="inline-flex items-center gap-1.5 text-sm text-zinc-500">
+                <MapPin size={14} className="text-cyan-400" />
+                Basé à Rochefort — clients partout
+              </span>
+            </div>
+
+            <h1 className="mb-6 text-4xl font-extrabold leading-[1.1] tracking-tight sm:text-5xl md:text-6xl lg:text-[3.5rem]">
+              Je crée des sites web qui{" "}
+              <span className="gradient-text">attirent des clients</span>
+            </h1>
+
+            <p className="mb-8 max-w-xl text-base leading-relaxed text-zinc-400 sm:text-lg">
+              Développeur web freelance, j&apos;accompagne les entreprises, artisans
+              et indépendants partout en France — en présentiel ou à distance — pour
+              créer des sites modernes, performants et optimisés pour Google.
+            </p>
+
+            <div className="mb-10 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <motion.a
+                href="#contact"
+                className="btn-primary group"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}>
+                Démarrer un projet
+                <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
+              </motion.a>
+              <motion.a
+                href="#projects"
+                className="btn-secondary"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}>
+                Voir mes réalisations
+              </motion.a>
+            </div>
+
+            <div className="flex flex-wrap gap-8 border-t border-white/5 pt-8">
+              {stats.map((stat) => (
+                <div key={stat.label}>
+                  <p className="text-2xl font-bold gradient-text">{stat.value}</p>
+                  <p className="text-sm text-zinc-500">{stat.label}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-8 flex items-center gap-3">
+              {socialLinks.map(({ icon: Icon, url, label }) => (
                 <motion.a
-                  key={index}
-                  href={link.url}
+                  key={label}
+                  href={url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-slate-400 hover:text-cyan-400 hover:bg-cyan-500/10 transition-colors p-3 bg-white/5 rounded-full backdrop-blur-sm"
-                  whileHover={{
-                    scale: 1.2,
-                    rotate: index % 2 === 0 ? -5 : 5,
-                  }}
-                  whileTap={{ scale: 0.9 }}>
-                  <Icon size={24} />
+                  aria-label={label}
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/8 bg-white/3 text-zinc-400 transition-colors hover:border-indigo-500/30 hover:text-white">
+                  <Icon size={18} />
                 </motion.a>
-              );
-            })}
+              ))}
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative hidden lg:block">
+            <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-indigo-500/20 to-cyan-500/10 blur-2xl" />
+            <div className="glass-card relative overflow-hidden rounded-2xl p-1">
+              <div className="flex items-center gap-2 border-b border-white/5 bg-white/2 px-4 py-3">
+                <span className="h-3 w-3 rounded-full bg-red-500/80" />
+                <span className="h-3 w-3 rounded-full bg-amber-500/80" />
+                <span className="h-3 w-3 rounded-full bg-emerald-500/80" />
+                <span className="ml-2 text-xs text-zinc-500">projet.js</span>
+              </div>
+              <pre className="overflow-x-auto p-5 font-mono text-sm leading-7">
+                {codeLines.map((line, i) => (
+                  <div key={i} style={{ paddingLeft: `${line.indent * 1.5}rem` }}>
+                    {line.parts.map((part, j) => (
+                      <span key={j} className={part.color}>{part.text}</span>
+                    ))}
+                  </div>
+                ))}
+              </pre>
+            </div>
+
+            <motion.div
+              animate={{ y: [0, -8, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute -bottom-4 -left-4 glass-card rounded-xl px-4 py-3">
+              <p className="text-xs text-zinc-500">Performance</p>
+              <p className="text-lg font-bold text-emerald-400">98/100</p>
+            </motion.div>
+
+            <motion.div
+              animate={{ y: [0, 8, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute -top-4 -right-4 glass-card rounded-xl px-4 py-3">
+              <p className="text-xs text-zinc-500">SEO</p>
+              <p className="text-lg font-bold gradient-text">Optimisé</p>
+            </motion.div>
           </motion.div>
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 }

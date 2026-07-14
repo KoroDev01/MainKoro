@@ -8,20 +8,24 @@ import SeoArticle from "./Components/SeoArticle";
 import Footer from "./Components/Footer";
 import Contact from "./Components/Contact";
 import Formation from "./Components/Formations";
+import BackgroundMesh from "./Components/ui/BackgroundMesh";
 import "./scss/style.scss";
 
 function App() {
   return (
-    <div className="min-h-screen bg-linear-to-br from-slate-950 via-slate-900 to-slate-950 relative text-white scroll-smooth">
+    <div className="relative min-h-screen scroll-smooth text-white">
+      <BackgroundMesh />
       <Header />
-      <Hero />
-      <About />
-      <Services />
-      <Formation />
-      <Skills />
-      <Projects />
-      <SeoArticle />
-      <Contact />
+      <main>
+        <Hero />
+        <About />
+        <Services />
+        <Formation />
+        <Skills />
+        <Projects />
+        <SeoArticle />
+        <Contact />
+      </main>
       <Footer />
     </div>
   );

@@ -1,7 +1,7 @@
 {
   "name": "KoroDev",
   "short_name": "KoroDev",
-  "description": "Développeur web freelance à Rochefort — création de sites web en Charente-Maritime.",
+  "description": "Développeur web freelance — création de sites web pour clients partout en France.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0f172a",

@@ -1,12 +1,14 @@
 import { motion } from "framer-motion";
-import { Globe, Layout, RefreshCw, Search, MapPin } from "lucide-react";
+import { Globe, Layout, RefreshCw, Search, MapPin, ArrowUpRight } from "lucide-react";
+import SectionHeader from "./ui/SectionHeader";
 
 const services = [
   {
     icon: Layout,
     title: "Site vitrine",
     description:
-      "Présentez votre activité avec un site moderne, responsive et optimisé pour Google. Idéal pour artisans, commerçants et indépendants à Rochefort.",
+      "Présentez votre activité avec un site moderne, responsive et optimisé pour Google. Idéal pour artisans, commerçants et indépendants.",
+    featured: true,
   },
   {
     icon: Globe,
@@ -24,33 +26,24 @@ const services = [
     icon: Search,
     title: "SEO & performance",
     description:
-      "Référencement local (Rochefort, La Rochelle), optimisation des temps de chargement et structure technique pour Google.",
+      "Référencement naturel, optimisation des temps de chargement et structure technique pour Google.",
   },
 ];
 
-
+const modes = ["Partout en France", "À distance", "En présentiel", "International"];
 
 export default function Services() {
   return (
-    <section id="services" className="py-20 px-4 sm:px-6">
-      <div className="container mx-auto max-w-6xl">
-        <motion.div
-          className="text-center mb-14"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
-            Création de sites web à Rochefort
-          </h2>
-          <div className="w-20 h-1 bg-linear-to-r from-cyan-500 to-blue-500 mx-auto mb-6"></div>
-          <p className="text-lg text-slate-400 max-w-2xl mx-auto">
-            Développeur web freelance basé à Rochefort — j&apos;accompagne les
-            entreprises locales dans leur présence en ligne.
-          </p>
-        </motion.div>
+    <section id="services" className="relative py-20 md:py-28">
+      <div className="section-divider mb-20" />
+      <div className="section-container">
+        <SectionHeader
+          label="Services"
+          title="Création de sites web sur mesure"
+          description="Développeur web freelance — j'accompagne les entreprises et indépendants partout en France, en présentiel ou à distance."
+        />
 
-        <div className="grid sm:grid-cols-2 gap-6 mb-16">
+        <div className="mb-12 grid gap-4 sm:grid-cols-2">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
@@ -59,13 +52,28 @@ export default function Services() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-slate-900/50 border border-slate-800 rounded-xl p-6 hover:border-cyan-500/50 transition-all">
-                <div className="w-12 h-12 bg-linear-to-r from-cyan-500 to-blue-500 rounded-lg flex items-center justify-center mb-4">
-                  <Icon className="text-white" size={22} />
+                transition={{ duration: 0.5, delay: index * 0.08 }}
+                className={`glass-card group relative overflow-hidden p-6 sm:p-8 ${
+                  service.featured ? "sm:col-span-2 sm:flex sm:items-center sm:gap-8" : ""
+                }`}>
+                {service.featured && (
+                  <div className="absolute right-0 top-0 h-32 w-32 translate-x-8 -translate-y-8 rounded-full bg-indigo-500/10 blur-2xl" />
+                )}
+                <div className={`${service.featured ? "sm:shrink-0" : ""}`}>
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-indigo-600 shadow-lg shadow-indigo-500/20">
+                    <Icon className="text-white" size={22} />
+                  </div>
+                  <h3 className="mb-2 text-xl font-bold text-white">{service.title}</h3>
+                  <p className="text-sm leading-relaxed text-zinc-500">{service.description}</p>
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-2">{service.title}</h3>
-                <p className="text-slate-400 text-sm leading-relaxed">{service.description}</p>
+                {service.featured && (
+                  <a
+                    href="#contact"
+                    className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-indigo-400 transition-colors hover:text-indigo-300 sm:mt-0">
+                    Demander un devis
+                    <ArrowUpRight size={16} className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                  </a>
+                )}
               </motion.div>
             );
           })}
@@ -76,16 +84,24 @@ export default function Services() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-slate-900/50 border border-slate-800 rounded-xl p-8 text-center">
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <MapPin className="text-cyan-400" size={22} />
-            <h3 className="text-xl font-semibold text-white">Zone d&apos;intervention</h3>
+          className="glass-card p-8 text-center">
+          <div className="mb-4 flex items-center justify-center gap-2">
+            <MapPin className="text-cyan-400" size={20} />
+            <h3 className="text-lg font-bold text-white">Où je travaille</h3>
           </div>
-          <p className="text-slate-400 mb-6 max-w-xl mx-auto">
-            Je travaille avec des clients à Rochefort et dans toute la
-            Charente-Maritime, en présentiel ou à distance.
+          <p className="mx-auto mb-6 max-w-lg text-sm text-zinc-500">
+            Basé à Rochefort, je collabore avec des clients partout en France et à
+            l&apos;international — en visio, par email ou en rendez-vous sur place.
           </p>
-          
+          <div className="flex flex-wrap justify-center gap-2">
+            {modes.map((mode) => (
+              <span
+                key={mode}
+                className="rounded-full border border-white/8 bg-white/3 px-4 py-1.5 text-sm text-zinc-400">
+                {mode}
+              </span>
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>

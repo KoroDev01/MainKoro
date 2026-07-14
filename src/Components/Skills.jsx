@@ -1,72 +1,60 @@
 import { motion } from "framer-motion";
+import SectionHeader from "./ui/SectionHeader";
+
+const skillCategories = [
+  {
+    title: "Frontend",
+    color: "from-cyan-500 to-blue-500",
+    skills: ["React", "JavaScript", "Tailwind CSS", "SCSS", "Figma"],
+  },
+  {
+    title: "Backend",
+    color: "from-indigo-500 to-purple-500",
+    skills: ["Node.js", "Express.js", "PostgreSQL", "MongoDB", "SQL"],
+  },
+];
 
 export default function Skills() {
-    const skillCategories = [
-      {
-        title: "Frontend",
-        skills: [
-          { name: "React", level: 100 },
-          { name: "JavaScript", level: 100 },
-          { name: "Tailwind CSS SCSS", level: 100 },
-          { name: "Figma", level: 100 },
-        ],
-      },
-      {
-        title: "Backend",
-        skills: [
-          { name: "Sql", level: 100 },
-          { name: "PostgreSQL", level: 100 },
-          { name: "MongoDB", level: 100 },
-          { name: "Express JS", level: 100 },
-        ],
-      },
-    ];
   return (
-    <motion.section id="skills"
-      className="flex flex-col items-center justify-center text-center  px-4 py-20"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1 }}>
-      <h2 className="text-4xl md:text-5xl font-bold mb-6">Compétences</h2>
-      <div className="w-20 h-1 bg-linear-to-r from-cyan-500 to-blue-500 mx-auto mb-8"></div>
-      <p className="text-xl text-slate-400 pb-15">
-        Technologies et outils que je maîtrise
-      </p>
-      <div className="grid md:grid-cols-2 gap-8 w-full max-w-6xl mt-10">
-        {skillCategories.map((category, categoryIndex) => (
-          <motion.div
-            key={category.title}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
-            className="bg-slate-900/50 backdrop-blur-sm border border-slate-800 rounded-xl p-6">
-            <h3 className="text-xl text-white mb-6">{category.title}</h3>
-            <div className="space-y-4">
-              {category.skills.map((skill, skillIndex) => (
-                <div key={skill.name}>
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-slate-300">{skill.name}</span>
+    <section id="skills" className="relative py-20 md:py-28">
+      <div className="section-divider mb-20" />
+      <div className="section-container">
+        <SectionHeader
+          label="Compétences"
+          title="Technologies & outils"
+          description="Un stack moderne pour des sites performants, évolutifs et faciles à maintenir."
+        />
 
-                  </div>
-                  <div className="h-2 bg-slate-800 rounded-full overflow-hidden">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      whileInView={{ width: `${skill.level}%` }}
-                      viewport={{ once: true }}
-                      transition={{
-                        duration: 1,
-                        delay: categoryIndex * 0.1 + skillIndex * 0.1,
-                      }}
-                      className="h-full bg-linear-to-r from-cyan-500 to-blue-500 rounded-full"
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-        ))}
+        <div className="grid gap-6 md:grid-cols-2">
+          {skillCategories.map((category, categoryIndex) => (
+            <motion.div
+              key={category.title}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
+              className="glass-card p-6 sm:p-8">
+              <div className="mb-6 flex items-center gap-3">
+                <div className={`h-1 w-8 rounded-full bg-gradient-to-r ${category.color}`} />
+                <h3 className="text-xl font-bold text-white">{category.title}</h3>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {category.skills.map((skill, skillIndex) => (
+                  <motion.span
+                    key={skill}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.3, delay: categoryIndex * 0.1 + skillIndex * 0.05 }}
+                    className="rounded-lg border border-white/8 bg-white/3 px-4 py-2 text-sm font-medium text-zinc-300 transition-colors hover:border-indigo-500/30 hover:text-white">
+                    {skill}
+                  </motion.span>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
-    </motion.section>
+    </section>
   );
 }
