@@ -9,14 +9,14 @@ const socialLinks = [
 
 const stats = [
   { value: "4+", label: "Projets réalisés" },
-  { value: "100%", label: "Sur mesure" },
+  { value: "17300", label: "Rochefort" },
   { value: "FR", label: "Clients partout" },
 ];
 
 const codeLines = [
   { indent: 0, parts: [{ text: "const ", color: "text-purple-400" }, { text: "projet", color: "text-cyan-300" }, { text: " = {", color: "text-zinc-400" }] },
   { indent: 1, parts: [{ text: "client", color: "text-cyan-300" }, { text: ": ", color: "text-zinc-500" }, { text: '"Votre entreprise"', color: "text-emerald-400" }, { text: ",", color: "text-zinc-400" }] },
-  { indent: 1, parts: [{ text: "zone", color: "text-cyan-300" }, { text: ": ", color: "text-zinc-500" }, { text: '"Partout en France"', color: "text-emerald-400" }, { text: ",", color: "text-zinc-400" }] },
+  { indent: 1, parts: [{ text: "ville", color: "text-cyan-300" }, { text: ": ", color: "text-zinc-500" }, { text: '"Rochefort"', color: "text-emerald-400" }, { text: ",", color: "text-zinc-400" }] },
   { indent: 1, parts: [{ text: "objectif", color: "text-cyan-300" }, { text: ": ", color: "text-zinc-500" }, { text: '"Plus de clients"', color: "text-emerald-400" }, { text: ",", color: "text-zinc-400" }] },
   { indent: 1, parts: [{ text: "seo", color: "text-cyan-300" }, { text: ": ", color: "text-zinc-500" }, { text: "true", color: "text-amber-400" }, { text: ",", color: "text-zinc-400" }] },
   { indent: 1, parts: [{ text: "responsive", color: "text-cyan-300" }, { text: ": ", color: "text-zinc-500" }, { text: "true", color: "text-amber-400" }] },
@@ -37,23 +37,23 @@ export default function Hero() {
             <div className="mb-6 flex flex-wrap items-center gap-3">
               <span className="section-label">
                 <Sparkles size={12} className="mr-1.5 inline" />
-                Développeur Web Freelance
+                Développeur web — Rochefort (17)
               </span>
               <span className="inline-flex items-center gap-1.5 text-sm text-zinc-500">
                 <MapPin size={14} className="text-cyan-400" />
-                Basé à Rochefort — clients partout
+                Charente-Maritime & France entière
               </span>
             </div>
 
             <h1 className="mb-6 text-4xl font-extrabold leading-[1.1] tracking-tight sm:text-5xl md:text-6xl lg:text-[3.5rem]">
-              Développeur web freelance : des sites qui{" "}
+              Développeur web à Rochefort — des sites qui{" "}
               <span className="gradient-text">attirent des clients</span>
             </h1>
 
             <p className="mb-8 max-w-xl text-base leading-relaxed text-zinc-400 sm:text-lg">
-              Développeur web freelance, j&apos;accompagne les entreprises, artisans
-              et indépendants partout en France — en présentiel ou à distance — pour
-              créer des sites modernes, performants et optimisés pour Google.
+              <strong className="font-semibold text-zinc-200">KoroDev</strong>, développeur
+              web freelance basé à Rochefort (17300), crée des sites vitrines et applications
+              sur mesure pour les entreprises de Charente-Maritime et de toute la France.
             </p>
 
             <div className="mb-10 flex flex-col gap-3 sm:flex-row sm:items-center">

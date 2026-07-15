@@ -2,9 +2,10 @@ import { Github, Linkedin, Mail, ArrowUp } from "lucide-react";
 
 const footerLinks = [
   { label: "Accueil", href: "#home" },
+  { label: "Développeur web Rochefort", href: "#rochefort" },
   { label: "Création de sites web", href: "#services" },
   { label: "Projets web", href: "#projects" },
-  { label: "FAQ développeur web", href: "#blog" },
+  { label: "FAQ Rochefort", href: "#blog" },
   { label: "Devis gratuit", href: "#contact" },
 ];
 
@@ -31,8 +32,8 @@ export default function Footer() {
               </span>
             </a>
             <p className="max-w-xs text-sm leading-relaxed text-zinc-500">
-              Développeur web freelance basé à Rochefort.
-              J&apos;accompagne des clients partout en France et à distance.
+              Développeur web à Rochefort (17300).
+              Création de sites vitrines et applications web en Charente-Maritime et en France.
             </p>
           </div>
 
@@ -64,7 +65,7 @@ export default function Footer() {
 
         <div className="flex flex-col items-center justify-between gap-4 border-t border-white/5 pt-8 sm:flex-row">
           <p className="text-sm text-zinc-600">
-            &copy; {new Date().getFullYear()} KoroDev — Rochefort, Charente-Maritime. Tous droits réservés.
+            &copy; {new Date().getFullYear()} KoroDev — Développeur web Rochefort, Charente-Maritime.
           </p>
           <button
             type="button"

@@ -21,7 +21,7 @@ export default function SeoArticle() {
           <div className="border-b border-white/5 bg-gradient-to-r from-indigo-500/10 to-cyan-500/5 px-6 py-4 sm:px-8">
             <div className="flex items-center gap-2 text-sm font-semibold text-indigo-400">
               <BookOpen size={16} aria-hidden="true" />
-              Conseils & FAQ — Développement web
+              Conseils & FAQ — Développeur web Rochefort
             </div>
           </div>
 
@@ -30,15 +30,15 @@ export default function SeoArticle() {
               id="faq-heading"
               className="mb-6 text-2xl font-bold leading-tight text-white sm:text-3xl"
               itemProp="headline">
-              Pourquoi votre entreprise a besoin d&apos;un site web en 2026 ?
+              Pourquoi faire appel à un développeur web à Rochefort en 2026 ?
             </h2>
 
             <div className="space-y-5 text-base leading-relaxed text-zinc-400" itemProp="articleBody">
               <p>
-                Partout en France, de plus en plus de clients cherchent un artisan,
-                un restaurant ou un professionnel directement sur Google avant de se
-                déplacer. Sans site web, votre entreprise reste invisible face à la
-                concurrence, même si votre activité est excellente.
+                À Rochefort et en Charente-Maritime, de plus en plus de clients
+                cherchent un artisan, un restaurant ou un professionnel directement
+                sur Google avant de se déplacer. Sans site web, votre entreprise
+                reste invisible face à la concurrence, même si votre activité est excellente.
               </p>
               <p>
                 Un <strong className="font-semibold text-white">site vitrine professionnel</strong>{" "}
@@ -47,10 +47,10 @@ export default function SeoArticle() {
                 quand vous dormez et renforce votre crédibilité en ligne.
               </p>
               <p>
-                En tant que <strong className="font-semibold text-white">développeur web freelance</strong>,
-                j&apos;accompagne les TPE, PME, artisans et indépendants dans la
-                création de sites internet performants, optimisés pour le référencement
-                naturel (SEO) et adaptés à tous les écrans.
+                En tant que <strong className="font-semibold text-white">développeur web à Rochefort</strong>,
+                j&apos;accompagne les TPE, PME, artisans et indépendants de
+                Charente-Maritime — et de toute la France — dans la création de sites
+                internet performants, optimisés pour le référencement naturel (SEO).
               </p>
             </div>
 

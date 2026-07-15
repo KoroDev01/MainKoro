@@ -34,8 +34,8 @@ export default function About() {
             <SectionHeader
               align="left"
               label="À propos"
-              title="Développeur passionné, disponible partout"
-              description="Passionné par le développement web, je suis développeur freelance basé à Rochefort. J'accompagne les artisans, commerçants et PME partout en France dans la création de sites internet sur mesure."
+              title="Développeur web à Rochefort, disponible partout en France"
+              description="Passionné par le développement web, je suis développeur freelance basé à Rochefort (17300). J'accompagne les artisans, commerçants et PME de Charente-Maritime — et au-delà — dans la création de sites internet sur mesure."
             />
             <p className="text-base leading-relaxed text-zinc-400">
               Mon objectif : des expériences web modernes qui vous apportent de{" "}

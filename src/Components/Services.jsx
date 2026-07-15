@@ -30,7 +30,7 @@ const services = [
   },
 ];
 
-const modes = ["Partout en France", "À distance", "En présentiel", "International"];
+const modes = ["Rochefort", "La Rochelle", "Charente-Maritime", "Toute la France", "À distance"];
 
 export default function Services() {
   return (
@@ -40,8 +40,8 @@ export default function Services() {
         <SectionHeader
           id="services-heading"
           label="Services"
-          title="Création de sites web sur mesure"
-          description="Développeur web freelance — j'accompagne les entreprises et indépendants partout en France, en présentiel ou à distance."
+          title="Création de sites web à Rochefort"
+          description="Développeur web freelance basé à Rochefort — sites vitrines, applications et SEO pour entreprises locales et clients partout en France."
         />
 
         <div className="mb-12 grid gap-4 sm:grid-cols-2">
@@ -91,8 +91,9 @@ export default function Services() {
             <h3 className="text-lg font-bold text-white">Où je travaille</h3>
           </div>
           <p className="mx-auto mb-6 max-w-lg text-sm text-zinc-500">
-            Basé à Rochefort, je collabore avec des clients partout en France et à
-            l&apos;international — en visio, par email ou en rendez-vous sur place.
+            Basé à Rochefort, je collabore en priorité avec des clients en
+            Charente-Maritime, tout en accompagnant des projets partout en France
+            et à l&apos;international.
           </p>
           <div className="flex flex-wrap justify-center gap-2">
             {modes.map((mode) => (

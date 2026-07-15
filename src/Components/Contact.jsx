@@ -74,7 +74,7 @@ export default function Contact() {
         <SectionHeader
           label="Contact"
           title="Parlons de votre projet"
-          description="Un projet web en France ou à l'international ? Devis gratuit et sans engagement."
+          description="Développeur web à Rochefort — projet en Charente-Maritime ou ailleurs en France ? Devis gratuit."
         />
 
         <div className="grid gap-8 lg:grid-cols-5 lg:gap-12">

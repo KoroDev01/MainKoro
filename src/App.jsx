@@ -4,6 +4,7 @@ import About from "./Components/About";
 import Services from "./Components/Services";
 import Skills from "./Components/Skills";
 import Projects from "./Components/Projects";
+import LocalSeo from "./Components/LocalSeo";
 import SeoArticle from "./Components/SeoArticle";
 import Footer from "./Components/Footer";
 import Contact from "./Components/Contact";
@@ -20,6 +21,7 @@ function App() {
         <Hero />
         <About />
         <Services />
+        <LocalSeo />
         <Formation />
         <Skills />
         <Projects />
